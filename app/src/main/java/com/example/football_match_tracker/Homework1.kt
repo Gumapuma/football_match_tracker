@@ -5,7 +5,7 @@ class Homework1 {
         val matches = createFootballMatches()
         println(matches.toString())
 
-        for (c in matches.size-1 downTo 0 ) if (matches[c].isMatchDraw()) matches.removeAt(c)
+        for (c in matches.size - 1 downTo 0) if (matches[c].isMatchDraw()) matches.removeAt(c)
         println(matches.toString())
 
         val maximalGapSet = createSetOfMaximalGap(matches)
@@ -21,12 +21,12 @@ fun createFootballMatches(): MutableList<FootballMatch> {
     return matches
 }
 
-fun createSetOfMaximalGap(matches: MutableList<FootballMatch>): MutableSet<FootballMatch>{
+fun createSetOfMaximalGap(matches: MutableList<FootballMatch>): MutableSet<FootballMatch> {
     val maximalGapSet: MutableSet<FootballMatch> = mutableSetOf()
     var maximalGap = 0
 
-    matches.forEach() {if (it.getGap() > maximalGap) maximalGap = it.getGap()}
-    matches.forEach() {if (it.getGap() == maximalGap) maximalGapSet.add(it)}
+    matches.forEach { if (it.getGap() > maximalGap) maximalGap = it.getGap() }
+    matches.forEach { if (it.getGap() == maximalGap) maximalGapSet.add(it) }
 
     return maximalGapSet
 }
