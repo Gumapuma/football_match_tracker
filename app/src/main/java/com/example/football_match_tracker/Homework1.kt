@@ -14,8 +14,9 @@ class Homework1 {
 }
 
 fun createFootballMatches(): MutableList<FootballMatch> {
-    val matches: MutableList<FootballMatch> = mutableListOf()
-    for (c in 1..10) matches.add(FootballMatch((0..5).random(), (0..5).random()))
+    val matches: MutableList<FootballMatch> = MutableList(10) {
+        FootballMatch((0..5).random(), (0..5).random())
+    }
     println(matches.size)
     return matches
 }
